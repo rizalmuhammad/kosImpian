@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Enter URL address where your json file resides
                 // Even you can make call to php file which returns json data
-                url = new URL("http://192.168.1.3/kuliah/kwu/api/read.php");
+                url = new URL("http://192.168.1.19/kuliah/kwu/api/read.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
