@@ -7,15 +7,16 @@
     android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginBottom="0dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:foreground="?attr/selectableItemBackground">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:id="@+id/relativel"
         android:orientation="horizontal"
         android:padding="10dp"
         xmlns:tools="http://schemas.android.com/tools"
@@ -44,10 +45,10 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="harga kos"
             android:id="@+id/textHargaKos"
-            android:layout_marginLeft="150dp"
 
-            android:layout_toRightOf="@id/textKosName"
-            android:layout_toEndOf="@id/textKosName"
+            android:layout_marginLeft="200dp"
+            android:layout_toRightOf="@id/i_kos"
+            android:layout_toEndOf="@id/i_kos"
             android:textColor="#666"/>
 
         <TextView
