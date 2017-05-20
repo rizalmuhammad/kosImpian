@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mcn.kosimpian.AdapterKos">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:scaleType="fitXY"
+        android:layout_height="40dp"
+        android:id="@+id/i_kos"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="nama kos"
+        android:id="@+id/textKosName"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/i_kos"
+        />
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+        <!--android:text="price"-->
+        <!--android:id="@+id/textPrice"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="harga kos"
+        android:id="@+id/textHargaKos"
+        android:layout_marginLeft="150dp"
+
+        android:layout_toRightOf="@id/textKosName"
+        android:layout_toEndOf="@id/textKosName"
+        android:textColor="#666"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="alamat kos"
+        android:id="@+id/textKosAlamat"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/textHargaKos"
+        android:layout_toRightOf="@id/i_kos"
+        android:textColor="#666"/>
+
+
+</RelativeLayout>
