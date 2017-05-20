@@ -1,6 +1,7 @@
 package com.mcn.kosimpian;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -41,11 +42,6 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         MyHolder holder=new MyHolder(view);
         return holder;
     }
-
-
-
-
-
 
 
     // Bind data
@@ -92,6 +88,8 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myHolder.relatifl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), detail_kos.class);
+                v.getContext().startActivity(intent);
                 Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
             }
         });
