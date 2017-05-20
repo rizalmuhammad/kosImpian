@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
     android:clickable="true"
-    android:orientation="horizontal"
-    android:padding="10dp"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.mcn.kosimpian.AdapterKos">
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:foreground="?attr/selectableItemBackground">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:scaleType="fitXY"
-        android:layout_height="40dp"
-        android:id="@+id/i_kos"/>
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="nama kos"
-        android:id="@+id/textKosName"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@id/i_kos"
-        />
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.mcn.kosimpian.AdapterKos">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
-        <!--android:text="price"-->
-        <!--android:id="@+id/textPrice"-->
-        <!--android:textColor="@color/colorAccent"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_marginRight="5dp"-->
-        <!--/>-->
+        <ImageView
+            android:layout_width="60dp"
+            android:scaleType="fitXY"
+            android:layout_height="50dp"
+            android:id="@+id/i_kos"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="harga kos"
-        android:id="@+id/textHargaKos"
-        android:layout_marginLeft="150dp"
-
-        android:layout_toRightOf="@id/textKosName"
-        android:layout_toEndOf="@id/textKosName"
-        android:textColor="#666"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="alamat kos"
-        android:id="@+id/textKosAlamat"
-        android:layout_marginLeft="5dp"
-        android:layout_below="@id/textHargaKos"
-        android:layout_toRightOf="@id/i_kos"
-        android:textColor="#666"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="nama kos"
+            android:id="@+id/textKosName"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/i_kos"
+            />
 
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="harga kos"
+            android:id="@+id/textHargaKos"
+            android:layout_marginLeft="150dp"
+
+            android:layout_toRightOf="@id/textKosName"
+            android:layout_toEndOf="@id/textKosName"
+            android:textColor="#666"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="alamat kos"
+            android:id="@+id/textKosAlamat"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textHargaKos"
+            android:layout_toRightOf="@id/i_kos"
+            android:textColor="#666"/>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
