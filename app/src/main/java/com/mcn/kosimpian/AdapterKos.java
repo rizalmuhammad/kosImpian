@@ -1,13 +1,17 @@
 package com.mcn.kosimpian;
 
 import android.content.Context;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -21,6 +25,7 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     List<DataKos> data= Collections.emptyList();
     DataKos current;
     int currentPos=0;
+
 
     // create constructor to innitilize context and data sent from MainActivity
     public AdapterKos(Context context, List<DataKos> data){
@@ -37,17 +42,59 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return holder;
     }
 
+
+
+
+
+
+
     // Bind data
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
         // Get current position of item in recyclerview to bind data and assign values from list
         MyHolder myHolder= (MyHolder) holder;
-        DataKos current=data.get(position);
+        final DataKos current=data.get(position);
         myHolder.textKosName.setText(current.m_nama);
         myHolder.textKosAlamat.setText(current.m_alamat);
         myHolder.textKosHarga.setText( current.m_harga);
 
+//        myHolder.cView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        myHolder.textKosName.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        myHolder.textKosHarga.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        myHolder.textKosAlamat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        myHolder.img_Kos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        myHolder.relatifl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"posisi ; "+position,Toast.LENGTH_SHORT).show();
+            }
+        });
 //        myHolder.textPrice.setText("Rs. " + current.price + "\\Kg");
 //        myHolder.textPrice.setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
 
@@ -73,6 +120,8 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView textKosHarga;
         TextView textKosAlamat;
 //        TextView textPrice;
+        CardView cView;
+        RelativeLayout relatifl;
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {
@@ -82,6 +131,8 @@ public class AdapterKos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             textKosAlamat= (TextView) itemView.findViewById(R.id.textKosAlamat);
             textKosHarga = (TextView) itemView.findViewById(R.id.textHargaKos);
 //            textPrice = (TextView) itemView.findViewById(R.id.textPrice);
+            cView = (CardView) itemView.findViewById(R.id.card_view);
+            relatifl = (RelativeLayout) itemView.findViewById(R.id.relativel);
         }
 
     }

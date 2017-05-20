@@ -19,6 +19,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +34,29 @@ public class MainActivity extends AppCompatActivity {
     public static final int READ_TIMEOUT = 15000;
     private RecyclerView mRVKos;
     private AdapterKos mAdapter;
+    SwipeRefreshLayout swLayout;
+    LinearLayout llayout;
+    RecyclerView listR;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Inisialisasi SwipeRefreshLayout
+        swLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+
+        // Swipe Refresh Layout
+//        swLayout= (SwipeRefreshLayout)findViewById(R.id.swifeRefresh);
+        swLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new AsyncFetch().execute();
+            }
+        });
+
+
         //Make call to AsyncTask
         new AsyncFetch().execute();
     }
@@ -153,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
             }
-
+            swLayout.setRefreshing(false);
         }
 
     }
