@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Setup and Handover data to recyclerview
-                mRVKos = (RecyclerView)findViewById(R.id.dataMahasiswaList);
+                mRVKos = (RecyclerView)findViewById(R.id.dataKosList);
                 mAdapter = new AdapterKos(MainActivity.this, data);
                 mRVKos.setAdapter(mAdapter);
 
